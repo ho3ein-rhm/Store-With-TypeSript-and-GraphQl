@@ -2,9 +2,9 @@ import { queryType } from "nexus";
 
 export const Query = queryType({
   definition(t) {
-    t.field("hello", {
+    t.field("hossein", {
       type: "String",
-      resolve: () => "worlds",
+      resolve: () => "salam",
     });
   },
 });

@@ -24,12 +24,13 @@ export const Mutation = mutationType({
           });
           console.log(newUser);
           return true;
-        } catch (error) {
-          console.log(error);
+        } catch (error: any) {
+          console.log(error.code);
           const errorCaught: Error = error as Error;
+          if (error.code == "P2002")
+            errorCaught.message = "username Or email already taken";
           return new Error(errorCaught.message);
         }
-        
       },
     });
   },
